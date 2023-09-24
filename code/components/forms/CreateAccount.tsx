@@ -14,7 +14,6 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { createUser } from "@/lib/actions/createUser.actions";
 import {
   Card,
   CardContent,
@@ -47,11 +46,7 @@ function CreateAccount() {
   });
 
   function onSubmit({ name, email, password }: z.infer<typeof formSchema>) {
-    createUser({
-      name,
-      email,
-      password,
-    });
+    
   }
 
   const { push } = useRouter();

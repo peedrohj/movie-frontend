@@ -22,7 +22,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { useRouter } from "next/navigation";
-import { validateUser } from "@/lib/actions/validateUser.actions";
+import { signIn } from "next-auth/react";
 
 const formSchema = z.object({
   email: z.string().min(2, {
@@ -43,14 +43,13 @@ function Login() {
   });
 
   async function onSubmit({ email, password }: z.infer<typeof formSchema>) {
-    const isValidUser = await validateUser({
-      email,
-      password,
+    const result = await signIn("credentials", {
+      username: email,
+      password: password,
+      redirect: true,
+      callbackUrl: "/",
     });
 
-    console.log("isValidUser: ", isValidUser);
-
-    if (isValidUser) push("/");
   }
 
   const { push } = useRouter();
@@ -75,7 +74,7 @@ function Login() {
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input placeholder="shadcn" {...field} />
+                    <Input type="email" placeholder="shadcn" {...field} />
                   </FormControl>
 
                   <FormMessage />
@@ -90,7 +89,7 @@ function Login() {
                 <FormItem>
                   <FormLabel>Password</FormLabel>
                   <FormControl>
-                    <Input placeholder="shadcn" {...field} />
+                    <Input type="password" placeholder="shadcn" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

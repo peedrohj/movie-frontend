@@ -8,10 +8,10 @@ endif
 
 
 build:
-	$(DOCKER_COMPOSE) build app
+	$(DOCKER_COMPOSE) build frontend
 
 run-dev:
-	$(DOCKER_COMPOSE) up app
+	$(DOCKER_COMPOSE) up frontend
 
 shell:
-	$(DOCKER_COMPOSE) exec app bash
+	$(DOCKER_COMPOSE) exec frontend bash
