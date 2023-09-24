@@ -8,7 +8,7 @@ import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 
 function Header() {
   return (
-    <header className=" py-5 px-5 h-18 drop-shadow border-b ">
+    <header className=" p-5 h-18 drop-shadow border-b ">
       <div className="flex flex-row items-center h-full">
         <div className="font-bold basis-1/4 ">
           <h1 className="text-primary md:text-2xl text-xl">Header</h1>
