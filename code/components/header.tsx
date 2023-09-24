@@ -8,12 +8,12 @@ import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 
 function Header() {
   return (
-    <header className=" py-5 px-12 h-18 drop-shadow border-b ">
+    <header className=" py-5 px-5 h-18 drop-shadow border-b ">
       <div className="flex flex-row items-center h-full">
         <div className="font-bold basis-1/4 ">
-          <h1 className="text-primary text-3xl">Header</h1>
+          <h1 className="text-primary md:text-2xl text-xl">Header</h1>
         </div>
-        <div className="font-bold basis-2/4 text-center">
+        <div className="font-bold basis-3/4 md:basis-2/4 text-center">
           <div className="flex items-center">
             <Input type="email" placeholder="Search" className="mr-2"/>
             <Button type="submit" className="bg-secondary text-primary hover:text-secondary">
@@ -21,7 +21,7 @@ function Header() {
             </Button>
           </div>
         </div>
-        <div className="basis-1/4 flex space-x-4 justify-end items-center h-full">
+        <div className="basis-1/4 hidden md:flex space-x-4 justify-end items-center h-full ">
           <Link href="/">
             <Button variant={"link"}>Home</Button>
           </Link>
@@ -37,3 +37,5 @@ function Header() {
 }
 
 export default Header;
+
+
