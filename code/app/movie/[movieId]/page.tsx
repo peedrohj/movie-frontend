@@ -18,11 +18,15 @@ function MoviePage({ params: { movieId } }: PageProps) {
     <div>
       <Header />
       {data && (
-        <ReactPlayer
-          url={`http://localhost:5000/core/file/video/${data.file_id}`}
-          controls={true} 
-          playing={true}
-        />
+        <div className="flex max-w-full flex-col items-center justify-between mt-5">
+          <ReactPlayer
+            width="746"
+            height="420"
+            style={{ aspectRatio: "16/9", maxWidth: "100%" }}
+            url={`http://localhost:5000/core/file/video/${data.file_id}`}
+            controls={true}
+          />
+        </div>
       )}
     </div>
   );
