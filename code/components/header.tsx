@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import React from "react";
 import { Button } from "@/components/ui/button";
@@ -15,9 +17,12 @@ function Header() {
         </div>
         <div className="font-bold basis-3/4 md:basis-2/4 text-center">
           <div className="flex items-center">
-            <Input type="email" placeholder="Search" className="mr-2"/>
-            <Button type="submit" className="bg-secondary text-primary hover:text-secondary">
-                <MagnifyingGlassIcon />
+            <Input type="email" placeholder="Search" className="mr-2" />
+            <Button
+              type="submit"
+              className="bg-secondary text-primary hover:text-secondary"
+            >
+              <MagnifyingGlassIcon />
             </Button>
           </div>
         </div>
@@ -37,5 +42,3 @@ function Header() {
 }
 
 export default Header;
-
-

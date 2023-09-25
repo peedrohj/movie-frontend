@@ -7,21 +7,28 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-
-function MovieCard() {
+import Link from "next/link";
+type MoviePropos = {
+  params: {
+    id: string;
+  };
+};
+function MovieCard({ params: { id } }: MoviePropos) {
   return (
-    <Card className="w-[350px]">
-      <CardHeader>
-        <CardTitle>Card Title</CardTitle>
-        <CardDescription>Card Description</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <p>Card Content</p>
-      </CardContent>
-      <CardFooter>
-        <p>Card Footer</p>
-      </CardFooter>
-    </Card>
+    <Link key={id} href={`/movie/${id}`}>
+      <Card className="w-[350px]">
+        <CardHeader>
+          <CardTitle>Card Title</CardTitle>
+          <CardDescription>Card Description</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <p>Card Content</p>
+        </CardContent>
+        <CardFooter>
+          <p>Card Footer</p>
+        </CardFooter>
+      </Card>
+    </Link>
   );
 }
 
