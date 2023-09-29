@@ -15,20 +15,21 @@ type MoviePropos = {
 };
 function MovieCard({ params: { id } }: MoviePropos) {
   return (
-    <Link key={id} href={`/movie/${id}`}>
-      <Card className="w-[350px]">
-        <CardHeader>
-          <CardTitle>Card Title</CardTitle>
-          <CardDescription>Card Description</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <p>Card Content</p>
+    <Card className="md:max-w-sm w-full">
+      <Link key={id} href={`/movie/${id}`}>
+        <CardContent className="p-0">
+          <img
+            src="https://media.istockphoto.com/id/529249803/pt/foto/fundo-de-folhas-de-cor-verde-brilhante.webp?s=2048x2048&w=is&k=20&c=vqI7AUw-FFoqMW631yxdNwNNLDdnOLCgT_wWbQxc8RY="
+            alt="Card Image"
+            className="w-full"
+          />
         </CardContent>
-        <CardFooter>
-          <p>Card Footer</p>
-        </CardFooter>
-      </Card>
-    </Link>
+        <CardHeader>
+          <CardTitle>Nome do filme</CardTitle>
+          <CardDescription>00:00</CardDescription>
+        </CardHeader>
+      </Link>
+    </Card>
   );
 }
 
