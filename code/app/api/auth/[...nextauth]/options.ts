@@ -1,5 +1,8 @@
+import { setUser } from "@/lib/redux/feature/user-slice";
 import type { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import { useDispatch } from "react-redux";
+
 
 export const options: NextAuthOptions = {
   providers: [
@@ -31,4 +34,7 @@ export const options: NextAuthOptions = {
       },
     }),
   ],
+  session:{
+    strategy: "jwt",
+  }
 };

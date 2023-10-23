@@ -1,4 +1,3 @@
-import CreateAccount from "@/components/forms/CreateAccount";
 import Login from "@/components/forms/login";
 import bg from "@/public/assets/bg.jpg";
 

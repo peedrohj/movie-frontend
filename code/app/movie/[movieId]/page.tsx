@@ -12,22 +12,20 @@ type PageProps = {
 };
 
 function MoviePage({ params: { movieId } }: PageProps) {
-  const { data, error, isLoading, refetch } = useGetMovieQuery({ id: movieId });
 
   return (
     <div>
       <Header />
-      {data && (
         <div className="flex max-w-full flex-col items-center justify-between mt-5">
           <ReactPlayer
             width="746"
             height="420"
             style={{ aspectRatio: "16/9", maxWidth: "100%" }}
-            url={`http://localhost:5000/core/file/video/${data.file_id}`}
+            url={`http://localhost:5001/core/movie/${movieId}/video/download`}
             controls={true}
+            onError={(error, data) => console.log("ERROR: ", error.error)}
           />
         </div>
-      )}
     </div>
   );
 }
