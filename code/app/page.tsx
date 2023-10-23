@@ -5,7 +5,7 @@ import Header from "@/components/header";
 
 export default function Home() {
   return (
-    <main>
+    <main className="w-full h-full">
       <Header />
       <MovieList />
     </main>
