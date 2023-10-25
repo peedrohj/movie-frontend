@@ -20,13 +20,14 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "christian-kohler.path-intellisense",
-        "eg2.vscode-npm-script",
-        "Orta.vscode-jest",
-        "vivaxy.vscode-conventional-commits",
-        "ms-vscode.vscode-typescript-next",
-        "esbenp.prettier-vscode"
-      ]
+		"christian-kohler.path-intellisense",
+		"eg2.vscode-npm-script",
+		"Orta.vscode-jest",
+		"vivaxy.vscode-conventional-commits",
+		"ms-vscode.vscode-typescript-next",
+		"esbenp.prettier-vscode",
+		"bradlc.vscode-tailwindcss"
+	]
     }
   },
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
