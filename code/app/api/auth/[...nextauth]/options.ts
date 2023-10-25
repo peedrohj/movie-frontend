@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 
 export const options: NextAuthOptions = {
   providers: [
-    CredentialsProvider({
+    CredentialsProvider({ 
       name: "Credentials",
       credentials: {
         username: { label: "Username", type: "text", placeholder: "jsmith" },
@@ -15,7 +15,7 @@ export const options: NextAuthOptions = {
       async authorize(credentials, req) {
         if (!credentials || !credentials.username || !credentials.password)
           return null;
-
+        
         try {
           const res = await fetch("http://app:5000/core/auth", {
             method: "POST",
@@ -28,13 +28,20 @@ export const options: NextAuthOptions = {
           }
         } catch (error) {
           console.log("ERROR: ", error);
+          throw error;
         }
-
-        return null;
       },
     }),
   ],
-  session:{
-    strategy: "jwt",
-  }
+  callbacks:{
+    session({session, token, user}){
+      console.log("user: ", user)
+      console.log("token: ", token)
+
+
+      console.log("session: ", session)
+
+      return session
+    }
+  },
 };
