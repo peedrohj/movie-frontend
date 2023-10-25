@@ -56,7 +56,7 @@ function AddMoviePage() {
         </h1>
 
         <div className="flex justify-center text-center items-center my-5 mx-auto">
-          <img src={currentThumbnail()} alt="thumbnail" className="w-full min-h-[300px] border text-center" />
+          <img src={currentThumbnail()} alt="thumbnail" className="w-full min-h-[300px] border text-center" style={{"aspectRatio": 16/9}} />
         </div>
 
         <div className="flex gap-2">
