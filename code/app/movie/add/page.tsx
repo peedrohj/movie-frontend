@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
@@ -33,22 +33,32 @@ function AddMoviePage() {
   };
 
   const handleGenerateThumbnails = async () => {
-
     generateVideoThumbnails(inputFile as any, 10, "file")
       .then((res: string[]) => {
         setThumbnails(res);
       })
       .catch((err: any) => {
-        console.error(err)
-      })
+        console.error(err);
+      });
+  };
+
+  const currentThumbnail = () => {
+    if (!thumbnails?.length) return "";
+
+    return thumbnails[1];
   };
 
   return (
-    <div className="flex flex-col justify-center text-center items-center grow">
-      <div className="p-5 grow">
+    <div className="flex flex-col justify-center text-center items-center">
+      <div className="p-5 w-2/6 justify-center text-center items-center ">
         <h1 className="text-3xl font-bold text-foreground my-5">
           Welcome! Here you can upload your videos.
         </h1>
+
+        <div className="flex justify-center text-center items-center my-5 mx-auto">
+          <img src={currentThumbnail()} alt="thumbnail" className="w-full min-h-[300px] border text-center" />
+        </div>
+
         <div className="flex gap-2">
           <div className="text-center grow">
             <Input
@@ -59,17 +69,11 @@ function AddMoviePage() {
               onChange={handleInputFileChange}
             />
           </div>
-          <Button onClick={handleGenerateThumbnails} >Generate Thumbnails</Button>
+          <Button onClick={handleGenerateThumbnails}>
+            Generate Thumbnails
+          </Button>
         </div>
 
-        {thumbnails?.map((image, index) => (
-          <img
-            src={image}
-            alt="thumbnails"
-            style={{ maxWidth: 200 }}
-            key={`thumb_${index}`}
-          />
-        ))}
       </div>
     </div>
   );
