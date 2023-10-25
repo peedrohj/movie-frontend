@@ -10,8 +10,8 @@ function MovieList() {
 
   return (
     <div className="flex flex-row">
-      <div className="p-5 md:basis-4/5 items-center grid grid-cols-1 md:grid-cols-4 gap-4 max-w-fit">
-        {/* {isLoading && <MovieCardSkeleton />} */}
+      <div className="p-5 md:basis-4/5 items-center flex flex-row gap-4 flex-wrap">
+        {isLoading && <MovieCardSkeleton />}
         {data &&
           data.map((movie: Movie) => (
             <MovieCard key={movie.id} params={{ id: movie.id, size: movie.size, created_at: movie.created_at }} />
