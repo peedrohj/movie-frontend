@@ -16,6 +16,7 @@ import { useForm } from "react-hook-form";
 import { Input } from "@/components/ui/input";
 import { toast } from "@/components/ui/use-toast";
 import * as z from "zod";
+import CustomSelect from "@/components/ui/CustomSelect";
 
 const FormSchema = z.object({
   username: z.string().min(2, {
@@ -30,7 +31,6 @@ function CreateMovie() {
       username: "",
     },
   });
-
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
     toast({
@@ -90,16 +90,16 @@ function CreateMovie() {
             <FormItem>
               <FormLabel>Actors</FormLabel>
               <FormControl>
-                <Input placeholder="Actors" {...field} />
+                <CustomSelect />
               </FormControl>
               <FormDescription>
-                This is the name that other users will see when watching your
-                movie.
+                Select the actors present in this movie.
               </FormDescription>
               <FormMessage />
             </FormItem>
           )}
         />
+
         <Button type="submit" className="w-1/3 self-end">
           Submit
         </Button>

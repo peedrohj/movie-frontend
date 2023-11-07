@@ -46,7 +46,7 @@ function CreateMovieThumbnail() {
           <div className="flex grow">
             <label
               htmlFor="file"
-              className="text-primary min-w-full text-center grow cursor-pointer border border-primary rounded p-2"
+              className="text-primary min-w-full text-center grow cursor-pointer border border-primary rounded p-2 hover:border-primary/80 hover:text-primary/80"
             >
               Select your video
             </label>
