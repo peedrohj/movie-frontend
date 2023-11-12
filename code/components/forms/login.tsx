@@ -46,9 +46,11 @@ function Login() {
     const result = await signIn("credentials", {
       username: email,
       password: password,
-      redirect: false, 
+      redirect: true, 
       callbackUrl: "/",
     });
+
+    console.log("RESULT: ", result)
 
   }
 
