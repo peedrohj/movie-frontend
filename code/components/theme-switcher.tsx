@@ -3,7 +3,7 @@ import { useTheme } from "next-themes";
 import { Button } from "./ui/button";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 
-function ThemSwitcher() {
+function ThemeSwitcher() {
   const { setTheme, theme } = useTheme();
   const switchTheme = (): void => {
     if (theme == "dark") setTheme("ligth");
@@ -19,5 +19,5 @@ function ThemSwitcher() {
   );
 }
 
-export default ThemSwitcher;
+export default ThemeSwitcher;
 

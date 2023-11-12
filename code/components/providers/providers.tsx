@@ -10,7 +10,12 @@ interface Props {
 }
 function Providers({ children }: Props) {
   return (
-    <ThemeProvider>
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="dark"
+      enableSystem
+      disableTransitionOnChange
+    >
       <SessionProvider>
         <ReduxProvider>{children}</ReduxProvider>
       </SessionProvider>

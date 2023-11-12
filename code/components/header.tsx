@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import ThemSwitcher from "./theme-switcher";
+import ThemeSwitcher from "./theme-switcher";
 import { Input } from "./ui/input";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 
@@ -35,7 +35,7 @@ function Header() {
           <Link href="/auth/signin">
             <Button variant={"link"} className="hover:text-primary/70">Login</Button>
           </Link>
-          <ThemSwitcher />
+          <ThemeSwitcher />
         </div>
       </div>
     </header>
