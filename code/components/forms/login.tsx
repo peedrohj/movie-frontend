@@ -63,8 +63,8 @@ function Login() {
   return (
     <Card className="w-[350px]">
       <CardHeader>
-        <CardTitle>Create your account</CardTitle>
-        <CardDescription>Create your new account in one-click.</CardDescription>
+        <CardTitle>Login with your account</CardTitle>
+        <CardDescription>Enter your email and password to continue.</CardDescription>
       </CardHeader>
       <CardContent>
         <Form {...form}>
