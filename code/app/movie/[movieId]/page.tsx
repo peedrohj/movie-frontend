@@ -1,4 +1,4 @@
-import Header from "@/components/header";
+import Header from "@/components/header/header";
 import { useGetMovieQuery } from "@/lib/redux/api/movie-api";
 import React from "react";
 import ReactPlayer from "react-player";
