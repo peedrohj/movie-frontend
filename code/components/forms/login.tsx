@@ -49,9 +49,6 @@ function Login() {
       redirect: true, 
       callbackUrl: "/",
     });
-
-    console.log("RESULT: ", result)
-
   }
 
   const { push } = useRouter();

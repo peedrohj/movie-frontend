@@ -29,21 +29,18 @@ export const options: NextAuthOptions = {
             return user;
           }
         } catch (error) {
-          console.log("ERROR: ", error);
           throw error;
         }
       },
     }),
   ],
   callbacks: {
-    session: ({ session, token }) => {
-      return {
-        ...session,
-        user: {
-          ...session.user,
-          id: token.id,
-        },
-      };
+    async session({ session, user, token }) {
+      return { ...session, token };
+    },
+
+    async jwt({ token, user, account }) {
+      return { ...token, ...user };
     },
   },
 };
